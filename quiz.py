@@ -11,7 +11,7 @@ class SpørsmålQuiz:
         """ returnerer spørsmålet, riktig svar og listen med svaralternativer"""
         
         return self.spørsmål, self.riktig, self.svaralternativer
-# En endring
+
 
 class Quiz:
     
