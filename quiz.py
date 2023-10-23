@@ -86,5 +86,5 @@ spm3=SpørsmålQuiz("hva er 3+3?" , "6" , [1,2,3])
 matteQuiz.setSpørsmål(spm1)
 matteQuiz.setSpørsmål(spm2)
 matteQuiz.setSpørsmål(spm3)
-
+print("Hei, fra HAns")
 matteQuiz.play()
