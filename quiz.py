@@ -1,7 +1,7 @@
 from random import randint,choice, shuffle
 class SpørsmålQuiz:
     """klasse for hvert quizspørsmål. Inneholder et riktig svar og andre svaralternativer
-    Har en metode for å gi svar og svaralternativer i en tilfeldig rekkefølge, med fasit: giSpørsmål()"""
+    Har en metode for å gi svar og svaralternativer i en tilfeldig rekkefølge giSpørsmål()"""
     
     def __init__(self, spørsmål:str, fasit:str, svaralternativer:list ) -> None:
         self.spørsmål=spørsmål
@@ -48,10 +48,8 @@ class Quiz:
         self.stilteSpørsmål.append(nytt_spørsmål)
         return nytt_spørsmål
 
-
     def stillSpørsmål(self, spørsmål:SpørsmålQuiz) -> int:
             """ printer en liste med spørsmålet og returnerer indeksen til riktig svar"""
-            # spørsmålstekst, riktig, alternativer=spørsmål.giSpørsmål()
             spørsmålstekst, alternativer = spørsmål.giSpørsmål()
 
             print(spørsmålstekst)
@@ -64,7 +62,7 @@ class Quiz:
         elif len(self.spørsmål) == 0:
             return  True
         else:
-            return False # Vi er ikke ferdige
+            return False # Vi er ikke ferdige med quizen
 
     def play(self):
         """ en fun-fun-funksjon som lar deg spille et quiz spill.
