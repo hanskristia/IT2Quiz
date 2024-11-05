@@ -75,13 +75,14 @@ class Quiz:
         while not self.erFerdig():
 
             spm = self.hentSpørsmål() # Henter et nytt spørsmål
+            spm.stillSpørsmål() # Viktig å huske på
             svar=int(input("Hva er riktig svaralternativ?")) #tar inn et svaralternativ. Disse går fra 1 og oppover.
 
             if spm.erRiktig(svar):
                 self.poeng+=1
                 print("riktig!")
             else:
-                print("feil, riktig svar er ", spm.fasit())
+                print("feil, riktig svar er ", spm.hentFasit())
 
         if self.poeng >= self.poengGrense :
             print("hurra! du fikk", self.poeng," på ", len(self.stilteSpørsmål), "forsøk")
