@@ -29,6 +29,16 @@ class SpørsmålQuiz:
             stokket.append(valgt)
         return stokket
 
+    def hentFasit(self)->str:
+        return self.svaralternativer[self.fasit_indeks]
+    
+    def stillSpørsmål(self):
+            """ printer en liste med spørsmålet"""
+            
+            print(self.spørsmål)
+            for i in range(len(self.svaralternativer)):
+                print(f"{i+1}. ", self.svaralternativer[i])
+                
 class Quiz:
     
     def __init__(self) -> None:
@@ -47,14 +57,8 @@ class Quiz:
         self.spørsmål.remove(nytt_spørsmål) #flytter spørsmålet
         self.stilteSpørsmål.append(nytt_spørsmål)
         return nytt_spørsmål
-
-    def stillSpørsmål(self, spørsmål:SpørsmålQuiz) -> int:
-            """ printer en liste med spørsmålet og returnerer indeksen til riktig svar"""
-            spørsmålstekst, alternativer = spørsmål.giSpørsmål()
-
-            print(spørsmålstekst)
-            for i in range(len(alternativer)):
-                print(f"{i+1}. ", alternativer[i])
+   
+    
 
     def erFerdig(self)->bool:
         if self.poeng >= self.poengGrense:
@@ -77,7 +81,7 @@ class Quiz:
                 self.poeng+=1
                 print("riktig!")
             else:
-                print("feil, riktig svar er ", spm.riktig)
+                print("feil, riktig svar er ", spm.fasit())
 
         if self.poeng >= self.poengGrense :
             print("hurra! du fikk", self.poeng," på ", len(self.stilteSpørsmål), "forsøk")
