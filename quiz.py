@@ -82,7 +82,7 @@ class Quiz:
                 self.poeng+=1
                 print("riktig!")
             else:
-                print("feil, riktig svar er ", spm.fasit())
+                print("feil, riktig svar er ", spm.hentFasit())
 
         if self.poeng >= self.poengGrense :
             print("hurra! du fikk", self.poeng," på ", len(self.stilteSpørsmål), "forsøk")
